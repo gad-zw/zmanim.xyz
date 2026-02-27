@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<p id="alot"></p>
+<p id="misheyakir"></p>
+<p id="shkia"></p>
+
+<script type="module">
+
+import SunCalc from "https://esm.sh/suncalc3?dev";
+const lat = -33.19; //TODO: LOCAcion actual
+const lon = -71.70;//TODO: LOCAcion actual
+const date = new Date();
+/////////////////////////////
+
+document.getElementById("alot").innerHTML = SunCalc.getSunTime(date, lat, lon,-16.9).rise.value.toLocaleTimeString("en-GB");
+
+document.getElementById("misheyakir").innerHTML = SunCalc.getSunTime(date, lat, lon,-10.2).rise.value.toLocaleTimeString("en-GB");
+
+document.getElementById("shkia").innerHTML = SunCalc.getSunTimes(date,lat,lon).sunriseStart.value.toLocaleTimeString("en-GB");
+
+</script>
+
+
+</body>
+</html>
